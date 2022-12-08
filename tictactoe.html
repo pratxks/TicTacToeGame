@@ -1,0 +1,64 @@
+<html>
+<head>
+    <link rel="stylesheet" href="tictactoe.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="gamelogic.js"></script>
+    <script>
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+
+        function applyElementStyle() {
+            var b1 = document.getElementById("board1");
+
+            var el1 = document.getElementById("square1");
+            var el2 = document.getElementById("square2");
+            var el3 = document.getElementById("square3");
+            var el4 = document.getElementById("square4");
+            var el5 = document.getElementById("square5");
+            var el6 = document.getElementById("square6");
+            var el7 = document.getElementById("square7");
+            var el8 = document.getElementById("square8");
+            var el9 = document.getElementById("square9");
+
+            applyStyle(el1, "" + (0 + b1.offsetLeft) + "px", "" + (0 + b1.offsetTop) + "px");
+            applyStyle(el2, "" + (155 + b1.offsetLeft) + "px", "" + (0 + b1.offsetTop) + "px");
+            applyStyle(el3, "" + (310 + b1.offsetLeft) + "px", "" + (0 + b1.offsetTop) + "px");
+            applyStyle(el4, "" + (0 + b1.offsetLeft) + "px", "" + (155 + b1.offsetTop) + "px");
+            applyStyle(el5, "" + (155 + b1.offsetLeft) + "px", "" + (155 + b1.offsetTop) + "px");
+            applyStyle(el6, "" + (310 + b1.offsetLeft) + "px", "" + (155 + b1.offsetTop) + "px");
+            applyStyle(el7, "" + (0 + b1.offsetLeft) + "px", "" + (310 + b1.offsetTop) + "px");
+            applyStyle(el8, "" + (155 + b1.offsetLeft) + "px", "" + (310 + b1.offsetTop) + "px");
+            applyStyle(el9, "" + (310 + b1.offsetLeft) + "px", "" + (310 + b1.offsetTop) + "px");
+        }
+
+        function applyStyle(el, left, top) {
+            el.style.display = "inline-block";
+            el.style.position = "fixed";
+            el.style.color = "#0000FF";
+            el.style.left = left;
+            el.style.top = top;
+            el.style.width = "150px";
+            el.style.height = "150px";
+            el.style.margin = "5px";
+            el.style.fontSize = "7em";
+        }
+    </script>
+</head>
+
+    <body onload="applyElementStyle()">
+        <div id="message">Waiting for Player to Join ...</div>
+
+        <div id="board1" class="board">
+            <input type="button" id="square1" value="" />
+            <input type="button" id="square2" value="" />
+            <input type="button" id="square3" value="" />
+            <input type="button" id="square4" value="" />
+            <input type="button" id="square5" value="" />
+            <input type="button" id="square6" value="" />
+            <input type="button" id="square7" value="" />
+            <input type="button" id="square8" value="" />
+            <input type="button" id="square9" value="" />
+        </div>
+    </body>
+</html>
